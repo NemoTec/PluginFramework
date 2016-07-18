@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="PluginFramework" default="help">
+
+    <property name="sdk.dir" value="E:\Android\OPPO-SDK\V5.1\coloros-sdk-5.1-3.x" />
+
+    <property name="library.dir" value="" />
+
+    <property name="local.libraries" value="" />
+	
+    <property name="mykey.path" value="/xxx/xx/keystore" />
+    <property name="mykey" value="shared" />
+    <property name="key.store" value="${mykey.path}\\${mykey}.keystore" />
+    <property name="key.store.password" value="android" />
+    <property name="key.alias" value="android${mykey}key" />
+    <property name="key.alias.password" value="android" />
+
+    <property name="target" value="android-22" />
+
+    <property name="support.internal" value="true" />
+
+	<property name="package.libs.jar" value="true"/> 
+	
+    <property name="clear.exist.libraries" value="false" />
+    
+    <!-- quick check on sdk.dir -->
+    <fail
+            message="sdk.dir is missing. Make sure to generate local.properties using 'android update project' or to inject it through an env var"
+            unless="sdk.dir"
+    />
+
+    <import file="custom_rules.xml" optional="true" />
+
+    <import file="${sdk.dir}/tools/ant/build.xml" />
+
+</project>
